@@ -3,217 +3,837 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="style.css" />
     <title>Document</title>
     <style>
-      * {
-        box-sizing: inherit;
+      .hidden {
+        display: none;
       }
-      .bn-item-1x2 {
-  grid-column:1/span 2 ;
-}
-
-.bn-item-2x1 {
-  grid-row:span 2;
-  grid-column:span 2;
-}
-
-.bn-item-2x2 {
- grid-column:1/span 2;
-  grid-column:1/span 1
-   
-}
-
-      .infographic-container {
-        display: grid;
-        margin: 0 0 40px;
-        padding-top: 20px;
-        grid-gap: 10px;
-        position: relative;
-        grid-auto-flow: dense;
-        transition: all 0s ease-out;
+      .category-item {
+        cursor: pointer;
       }
-
-      .bn-item-inner {
-        height: 100%;
-        padding-bottom: 100%;
-        /* position: relative; */
-        transition: opacity 1s ease-out;
-        width: 100%;
-      }
-
-      .infographic-item-link {
-        position: relative;
-      }
-      .infographic-item-link .bn-item-img {
-        background-image: linear-gradient(
-          225deg,
-          #dfffc9 0%,
-          #eee19e 20%,
-          #fac97b 39%,
-          #ffc06e 49%,
-          #e28a5f 68%,
-          #c55450 89%,
-          #ba3f4a 99%
-        );
-        background-repeat: no-repeat;
-        background-size: 100% 100%;
-        border-radius: 3%;
-        height: 100%;
-        left: 0;
-        position: absolute;
-        top: 0;
-        transition: opacity 0.2s ease-out;
-        width: 100%;
-      }
-
-      .infographic-item-link .bn-item-inner .bn-item-img img {
-        width: 100%;
-        pointer-events: none;
-        transition: all 0.2s ease-out;
-        height: 100%;
+      img {
         object-fit: cover;
-        opacity: 1;
-        border-radius: 3%;
-        object-position: center top;
-      }
-
-      .infographic-item-link {
-        margin-bottom: 6px;
-        position: relative;
-      }
-
-      @media (min-width: 1024px) {
-        .infographic-container {
-          grid-template-columns: 1fr 1fr 1fr 1fr;
-        }
-      }
-
-      @media (min-width: 801px) and (max-width: 1024px) {
-        .infographic-container {
-          grid-template-columns: 1fr 1fr 1fr;
-        }
-      }
-
-      @media (min-width: 501px) and (max-width: 801px) {
-        .infographic-container {
-          grid-template-columns: 1fr 1fr;
-        }
-
-        .infographic-item-link {
-          margin-bottom: 0;
-        }
       }
     </style>
   </head>
   <body>
-    <div class="container">
-      <section class="infographic-container grid-container">
-        <a href="" class="infographic-item-link bn-item-1x1" style="opacity: 1">
-          <div class="bn-item-inner">
-            <div class="bn-item-img">
-              <img src="./blog-1.webp" alt="" />
+    <div class="bn-base">
+      <header class="bn-header">
+        <div class="bn-container">
+          <div class="bn-head"></div>
+
+          <div class="bn-filter-tabs-mobile">
+            <ul>
+              <li class="bn-filter-item">
+                <button
+                  class="bn-filter bn-filter-top bn-filter--active"
+                  data-slug="eco-and-climate"
+                  data-parent="false"
+                  data-title="Eco &amp; Climate"
+                  data-group="1"
+                >
+                  Eco &amp; Climate
+                </button>
+              </li>
+              <li class="bn-filter-item">
+                <button
+                  class="bn-filter bn-filter-top"
+                  data-slug="health"
+                  data-parent="false"
+                  data-title="Health"
+                  data-group="3"
+                >
+                  Health
+                </button>
+              </li>
+              <li class="bn-filter-item">
+                <button
+                  class="bn-filter bn-filter-top"
+                  data-slug="clean-energy"
+                  data-parent="false"
+                  data-title="Clean Energy"
+                  data-group="2"
+                >
+                  Clean Energy
+                </button>
+              </li>
+              <li class="bn-filter-item">
+                <button
+                  class="bn-filter bn-filter-top"
+                  data-slug="women-and-girls"
+                  data-parent="false"
+                  data-title="Women &amp; Girls"
+                  data-group="4"
+                >
+                  Women &amp; Girls
+                </button>
+              </li>
+              <li class="bn-filter-item">
+                <button
+                  class="bn-filter bn-filter-top"
+                  data-slug="society-and-community"
+                  data-parent="false"
+                  data-title="Society &amp; Community"
+                  data-group="5"
+                >
+                  Society &amp; Community
+                </button>
+              </li>
+              <li class="bn-filter-item">
+                <button
+                  class="bn-filter bn-filter-top"
+                  data-slug="quality-of-life"
+                  data-parent="false"
+                  data-title="Quality of Life"
+                  data-group="6"
+                >
+                  Quality of Life
+                </button>
+              </li>
+              <li class="bn-filter-item">
+                <button
+                  class="bn-filter bn-filter-top"
+                  data-slug="nature-and-animals"
+                  data-parent="false"
+                  data-title="Nature &amp; Animals"
+                  data-group="7"
+                >
+                  Nature &amp; Animals
+                </button>
+              </li>
+              <li class="bn-filter-item">
+                <button
+                  class="bn-filter bn-filter-top"
+                  data-slug="conflict-and-crime"
+                  data-parent="false"
+                  data-title="Conflict &amp; Crime"
+                  data-group="8"
+                >
+                  Conflict &amp; Crime
+                </button>
+              </li>
+              <li class="bn-filter-item">
+                <button
+                  class="bn-filter bn-filter-top"
+                  data-slug="misc"
+                  data-parent="false"
+                  data-title="Misc"
+                  data-group="9"
+                >
+                  Misc
+                </button>
+              </li>
+            </ul>
+          </div>
+
+          <div class="bn-controls-wrapper">
+            <div class="bn-filter-tab-wrapper">
+              <div class="bn-filter-tabs-inner">
+                <label class="bn-sr-only" id="bn-filter-label">Filter:</label>
+                <div class="bn-filter-tabs" aria-labelledby="bn-filter-label">
+                  <ul>
+                    <li class="bn-filter-item">
+                      <button
+                        class="bn-filter bn-filter-top bn-filter--active"
+                        data-slug="eco-and-climate"
+                        data-parent="false"
+                        data-title="Eco &amp; Climate"
+                        data-group="1"
+                      >
+                        Eco &amp; Climate
+                      </button>
+                    </li>
+                    <li class="bn-filter-item">
+                      <button
+                        class="bn-filter bn-filter-top"
+                        data-slug="health"
+                        data-parent="false"
+                        data-title="Health"
+                        data-group="3"
+                      >
+                        Health
+                      </button>
+                    </li>
+                    <li class="bn-filter-item">
+                      <button
+                        class="bn-filter bn-filter-top"
+                        data-slug="clean-energy"
+                        data-parent="false"
+                        data-title="Clean Energy"
+                        data-group="2"
+                      >
+                        Clean Energy
+                      </button>
+                    </li>
+                    <li class="bn-filter-item">
+                      <button
+                        class="bn-filter bn-filter-top"
+                        data-slug="women-and-girls"
+                        data-parent="false"
+                        data-title="Women &amp; Girls"
+                        data-group="4"
+                      >
+                        Women &amp; Girls
+                      </button>
+                    </li>
+                    <li class="bn-filter-item">
+                      <button
+                        class="bn-filter bn-filter-top"
+                        data-slug="society-and-community"
+                        data-parent="false"
+                        data-title="Society &amp; Community"
+                        data-group="5"
+                      >
+                        Society &amp; Community
+                      </button>
+                    </li>
+                    <li class="bn-filter-item">
+                      <button
+                        class="bn-filter bn-filter-top"
+                        data-slug="quality-of-life"
+                        data-parent="false"
+                        data-title="Quality of Life"
+                        data-group="6"
+                      >
+                        Quality of Life
+                      </button>
+                    </li>
+                    <li class="bn-filter-item">
+                      <button
+                        class="bn-filter bn-filter-top"
+                        data-slug="nature-and-animals"
+                        data-parent="false"
+                        data-title="Nature &amp; Animals"
+                        data-group="7"
+                      >
+                        Nature &amp; Animals
+                      </button>
+                    </li>
+                    <li class="bn-filter-item">
+                      <button
+                        class="bn-filter bn-filter-top"
+                        data-slug="conflict-and-crime"
+                        data-parent="false"
+                        data-title="Conflict &amp; Crime"
+                        data-group="8"
+                      >
+                        Conflict &amp; Crime
+                      </button>
+                    </li>
+                    <li class="bn-filter-item">
+                      <button
+                        class="bn-filter bn-filter-top"
+                        data-slug="misc"
+                        data-parent="false"
+                        data-title="Misc"
+                        data-group="9"
+                      >
+                        Misc
+                      </button>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+              <div class="bn-subfilter-tabs-inner">
+                <label class="bn-sr-only" id="bn-sub-filter-label"
+                  >Sub filter:</label
+                >
+                <div
+                  class="bn-subfilter-tabs"
+                  area-labelledby="bn-sub-filter-label"
+                >
+                  <ul>
+                    <li
+                      class="bn-subfilter-item"
+                      style="transform: scale(1); opacity: 1"
+                    >
+                      <button
+                        class="bn-subfilter"
+                        data-slug="eco-and-climateecotech"
+                        data-parent="1"
+                        data-title="ecotech"
+                        data-sub="28"
+                      >
+                        Ecotech
+                      </button>
+                    </li>
+                    <li
+                      class="bn-subfilter-item"
+                      style="transform: scale(1); opacity: 1"
+                    >
+                      <button
+                        class="bn-subfilter"
+                        data-slug="eco-and-climateelectric-vehicles"
+                        data-parent="1"
+                        data-title="electric vehicles"
+                        data-sub="55"
+                      >
+                        Electric Vehicles
+                      </button>
+                    </li>
+                    <li
+                      class="bn-subfilter-item"
+                      style="transform: scale(1); opacity: 1"
+                    >
+                      <button
+                        class="bn-subfilter"
+                        data-slug="eco-and-climateemissions"
+                        data-parent="1"
+                        data-title="emissions"
+                        data-sub="7"
+                      >
+                        Emissions
+                      </button>
+                    </li>
+                    <li
+                      class="bn-subfilter-item"
+                      style="transform: scale(1); opacity: 1"
+                    >
+                      <button
+                        class="bn-subfilter"
+                        data-slug="eco-and-climateenergy-use"
+                        data-parent="1"
+                        data-title="energy use"
+                        data-sub="77"
+                      >
+                        Energy Use
+                      </button>
+                    </li>
+                    <li
+                      class="bn-subfilter-item"
+                      style="transform: scale(1); opacity: 1"
+                    >
+                      <button
+                        class="bn-subfilter"
+                        data-slug="eco-and-climatefood"
+                        data-parent="1"
+                        data-title="food"
+                        data-sub="54"
+                      >
+                        Food
+                      </button>
+                    </li>
+                    <li
+                      class="bn-subfilter-item"
+                      style="transform: scale(1); opacity: 1"
+                    >
+                      <button
+                        class="bn-subfilter"
+                        data-slug="eco-and-climateforests"
+                        data-parent="1"
+                        data-title="forests"
+                        data-sub="14"
+                      >
+                        Forests
+                      </button>
+                    </li>
+                    <li
+                      class="bn-subfilter-item"
+                      style="transform: scale(1); opacity: 1"
+                    >
+                      <button
+                        class="bn-subfilter"
+                        data-slug="eco-and-climategreen-roofs"
+                        data-parent="1"
+                        data-title="green roofs"
+                        data-sub="74"
+                      >
+                        Green Roofs
+                      </button>
+                    </li>
+                    <li
+                      class="bn-subfilter-item"
+                      style="transform: scale(1); opacity: 1"
+                    >
+                      <button
+                        class="bn-subfilter"
+                        data-slug="eco-and-climatelegislation"
+                        data-parent="1"
+                        data-title="legislation"
+                        data-sub="9"
+                      >
+                        Legislation
+                      </button>
+                    </li>
+                    <li
+                      class="bn-subfilter-item"
+                      style="transform: scale(1); opacity: 1"
+                    >
+                      <button
+                        class="bn-subfilter"
+                        data-slug="eco-and-climateoceans"
+                        data-parent="1"
+                        data-title="oceans"
+                        data-sub="41"
+                      >
+                        Oceans
+                      </button>
+                    </li>
+                    <li
+                      class="bn-subfilter-item"
+                      style="transform: scale(1); opacity: 1"
+                    >
+                      <button
+                        class="bn-subfilter"
+                        data-slug="eco-and-climateplastics-and-recycling"
+                        data-parent="1"
+                        data-title="plastics &amp; recycling"
+                        data-sub="8"
+                      >
+                        Plastics &amp; Recycling
+                      </button>
+                    </li>
+                    <li
+                      class="bn-subfilter-item"
+                      style="transform: scale(1); opacity: 1"
+                    >
+                      <button
+                        class="bn-subfilter"
+                        data-slug="eco-and-climatepledges-and-targets"
+                        data-parent="1"
+                        data-title="pledges &amp; targets"
+                        data-sub="11"
+                      >
+                        Pledges &amp; Targets
+                      </button>
+                    </li>
+                    <li
+                      class="bn-subfilter-item"
+                      style="transform: scale(1); opacity: 1"
+                    >
+                      <button
+                        class="bn-subfilter"
+                        data-slug="eco-and-climatezero-energy"
+                        data-parent="1"
+                        data-title="zero energy"
+                        data-sub="76"
+                      >
+                        Zero Energy
+                      </button>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <div class="bn-controls">
+              <div class="bn-control-set">
+                <div class="bn-filter-set-wrapper bn-filter-set-wrapper--top">
+                  <label class="bn-control-label bn-sr-only">Topic:</label>
+                  <div class="bn-filter-wrapper"></div>
+                </div>
+                <div
+                  class="bn-filter-set-wrapper bn-filter-set-wrapper--sub bn-filter-set-wrapper--active"
+                >
+                  <label class="bn-control-label bn-sr-only" for="bn-sub-filter"
+                    >Subtopic:</label
+                  >
+                  <div class="bn-subfilter-wrapper">
+                    <div class="bn-select-wrapper">
+                      <select
+                        class="bn-select bn-sub-filter"
+                        id="bn-sub-filter"
+                      >
+                        <option value="reset" selected="">
+                          Filter by Subtopic...
+                        </option>
+                        <option value="28">ecotech</option>
+                        <option value="55">electric vehicles</option>
+                        <option value="7">emissions</option>
+                        <option value="77">energy use</option>
+                        <option value="54">food</option>
+                        <option value="14">forests</option>
+                        <option value="74">green roofs</option>
+                        <option value="9">legislation</option>
+                        <option value="41">oceans</option>
+                        <option value="8">plastics &amp; recycling</option>
+                        <option value="11">pledges &amp; targets</option>
+                        <option value="76">zero energy</option>
+                      </select>
+                    </div>
+                  </div>
+                </div>
+                <div class="bn-filter-set-wrapper bn-filter-set-wrapper--area">
+                  <label
+                    class="bn-control-label bn-sr-only"
+                    for="bn-area-filter"
+                    >Location:</label
+                  >
+                  <div class="bn-area-wrapper">
+                    <div class="bn-select-wrapper bn">
+                      <select
+                        class="bn-select bn-area-filter"
+                        id="bn-area-filter"
+                      >
+                        <option data-area="reset" value="reset" placeholder="">
+                          Filter by Location...
+                        </option>
+                        <optgroup label="Areas">
+                          <option data-area="region" value="africa">
+                            Africa
+                          </option>
+                          <option data-area="region" value="americas">
+                            Americas
+                          </option>
+                          <option data-area="region" value="asia">Asia</option>
+                          <option data-area="region" value="europe">
+                            Europe
+                          </option>
+                          <option data-area="region" value="global">
+                            Global
+                          </option>
+                          <option data-area="region" value="mena">MENA</option>
+                          <option data-area="region" value="oceania">
+                            Oceania
+                          </option>
+                        </optgroup>
+                        <optgroup label="Countries">
+                          <option data-area="country" value="afghanistan">
+                            Afghanistan
+                          </option>
+                          <option data-area="country" value="algeria">
+                            Algeria
+                          </option>
+                          <option data-area="country" value="angola">
+                            Angola
+                          </option>
+                          <option data-area="country" value="argentina">
+                            Argentina
+                          </option>
+                          <option data-area="country" value="australia">
+                            Australia
+                          </option>
+                          <option data-area="country" value="bangladesh">
+                            Bangladesh
+                          </option>
+                          <option data-area="country" value="belize">
+                            Belize
+                          </option>
+                          <option data-area="country" value="bhutan">
+                            Bhutan
+                          </option>
+                          <option data-area="country" value="cameroon">
+                            Cameroon
+                          </option>
+                          <option data-area="country" value="canada">
+                            Canada
+                          </option>
+                          <option data-area="country" value="china">
+                            China
+                          </option>
+                          <option data-area="country" value="congo">
+                            Congo
+                          </option>
+                          <option data-area="country" value="denmark">
+                            Denmark
+                          </option>
+                          <option data-area="country" value="egypt">
+                            Egypt
+                          </option>
+                          <option data-area="country" value="eritrea">
+                            Eritrea
+                          </option>
+                          <option data-area="country" value="ethiopia">
+                            Ethiopia
+                          </option>
+                          <option data-area="country" value="finland">
+                            Finland
+                          </option>
+                          <option data-area="country" value="germany">
+                            Germany
+                          </option>
+                          <option data-area="country" value="holland">
+                            Holland
+                          </option>
+                          <option data-area="country" value="iceland">
+                            Iceland
+                          </option>
+                          <option data-area="country" value="india">
+                            India
+                          </option>
+                          <option data-area="country" value="italy">
+                            Italy
+                          </option>
+                          <option data-area="country" value="japan">
+                            Japan
+                          </option>
+                          <option data-area="country" value="kenya">
+                            Kenya
+                          </option>
+                          <option data-area="country" value="mali">Mali</option>
+                          <option data-area="country" value="mexico">
+                            Mexico
+                          </option>
+                          <option data-area="country" value="mozambique">
+                            Mozambique
+                          </option>
+                          <option data-area="country" value="nepal">
+                            Nepal
+                          </option>
+                          <option data-area="country" value="netherlands">
+                            Netherlands
+                          </option>
+                          <option data-area="country" value="nigeria">
+                            Nigeria
+                          </option>
+                          <option data-area="country" value="norway">
+                            Norway
+                          </option>
+                          <option data-area="country" value="pakistan">
+                            Pakistan
+                          </option>
+                          <option data-area="country" value="paraguay">
+                            Paraguay
+                          </option>
+                          <option data-area="country" value="portugal">
+                            Portugal
+                          </option>
+                          <option data-area="country" value="russia">
+                            Russia
+                          </option>
+                          <option data-area="country" value="rwanda">
+                            Rwanda
+                          </option>
+                          <option data-area="country" value="scotland">
+                            Scotland
+                          </option>
+                          <option data-area="country" value="south-africa">
+                            South Africa
+                          </option>
+                          <option data-area="country" value="south-korea">
+                            South Korea
+                          </option>
+                          <option data-area="country" value="spain">
+                            Spain
+                          </option>
+                          <option data-area="country" value="sweden">
+                            Sweden
+                          </option>
+                          <option data-area="country" value="taiwan">
+                            Taiwan
+                          </option>
+                          <option data-area="country" value="uk">UK</option>
+                          <option data-area="country" value="ukraine">
+                            Ukraine
+                          </option>
+                          <option data-area="country" value="usa">USA</option>
+                          <option data-area="country" value="uzbekistan">
+                            Uzbekistan
+                          </option>
+                        </optgroup>
+                      </select>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="bn-control-set">
+                <div
+                  class="bn-filter-set-wrapper bn-filter-set-wrapper--search"
+                >
+                  <label class="bn-control-label bn-sr-only" for="bn-search"
+                    >Search:</label
+                  >
+                  <form class="bn-search-wrapper">
+                    <input
+                      type="search"
+                      name="s"
+                      id="bn-search"
+                      class="bn-search-input bn-search-input-menu"
+                      placeholder="Search..."
+                    /><button type="submit" class="bn-search-button">
+                      <i class="icon-search"></i>
+                    </button>
+                  </form>
+                </div>
+                <div class="bn-filter-set-wrapper bn-filter-set-wrapper--sort">
+                  <label class="bn-control-label bn-sr-only" for="bn-sort"
+                    >Sort:</label
+                  >
+                  <div class="bn-sort-wrapper">
+                    <div class="bn-select-wrapper">
+                      <select
+                        class="bn-select bn-sort bn-sort-menu"
+                        id="bn-sort"
+                      >
+                        <option value="newest">Sort: Newest</option>
+                        <option value="oldest">Sort: Oldest</option>
+                        <option value="popular">Sort: Popular</option>
+                      </select>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="bn-control-set">
+                <button class="bn-filter-submit">
+                  <i class="icon-ok"></i> Done
+                </button>
+              </div>
+              <div class="bn-control-set">
+                <a
+                  title="Load a random image"
+                  class="bn-aux-button--large bn-aux-button--random"
+                  href="/beautifulnews/random"
+                  ><i class="icon-shuffle"></i> Random</a
+                >
+              </div>
             </div>
           </div>
-        </a>
-        <a href="" class="infographic-item-link bn-item-1x2" style="opacity: 1">
-          <div class="bn-item-inner">
-            <div class="bn-item-img">
-              <img src="./blog-1.webp" alt="" />
-            </div>
-          </div>
-        </a>
-        <a href="" class="infographic-item-link" style="opacity: 1">
-            <div class="bn-item-inner">
-              <div class="bn-item-img">
-                <img src="./blog-2.jpg" alt="" />
-              </div>
-            </div>
-          </a>
-          <a href="" class="infographic-item-link bn-item-1x1" style="opacity: 1">
-            <div class="bn-item-inner">
-              <div class="bn-item-img">
-                <img src="./blog-1.webp" alt="" />
-              </div>
-            </div>
-          </a>
-          <a href="" class="infographic-item-link bn-item-1x1" style="opacity: 1">
-            <div class="bn-item-inner">
-              <div class="bn-item-img">
-                <img src="./blog-3.jpg" alt="" />
-              </div>
-            </div>
-          </a>
-        <a href="" class="infographic-item-link bn-item-2x2" style="opacity: 1">
-          <div class="bn-item-inner">
-            <div class="bn-item-img">
-              <img src="./category-item-3.webp" alt="" />
-            </div>
-          </div>
-        </a>
-        <a href="" class="infographic-item-link bn-item-1x2" style="opacity: 1">
-            <div class="bn-item-inner">
-              <div class="bn-item-img">
-                <img src="./category-item-4.webp" alt="" />
-              </div>
-            </div>
-          </a>
-          <a href="" class="infographic-item-link bn-item-2x1" style="opacity: 1">
-            <div class="bn-item-inner">
-              <div class="bn-item-img">
-                <img src="./category-item-6.webp" alt="" />
-              </div>
-            </div>
-          </a>
-          <a href="" class="infographic-item-link bn-item-2x2" style="opacity: 1">
-            <div class="bn-item-inner">
-              <div class="bn-item-img">
-                <img src="./category-item-7.webp" alt="" />
-              </div>
-            </div>
-          </a>
-          <a href="" class="infographic-item-link bn-item-1x2" style="opacity: 1">
-            <div class="bn-item-inner">
-              <div class="bn-item-img">
-                <img src="./category-item-1.webp" alt="" />
-              </div>
-            </div>
-          </a>
-          <a href="" class="infographic-item-link bn-item-2x1" style="opacity: 1">
-            <div class="bn-item-inner">
-              <div class="bn-item-img">
-                <img src="./blog-1.webp" alt="" />
-              </div>
-            </div>
-          </a>
-          <a href="" class="infographic-item-link bn-item-1x1" style="opacity: 1">
+        </div>
+      </header>
+      <main class="bn-content-area" id="content">
+        <div class="container">
+          <div class="bn-grid">
+            <a href="" class="bn-item">
               <div class="bn-item-inner">
                 <div class="bn-item-img">
-                  <img src="./blog-2.jpg" alt="" />
+                  <img
+                    src="./1076-scotland-wind-energy.svg"
+                    style="min-width: 200px; min-height: 200px"
+                    alt=""
+                  />
                 </div>
               </div>
             </a>
-            <a href="" class="infographic-item-link " style="opacity: 1">
+            <a href="" class="bn-item">
               <div class="bn-item-inner">
                 <div class="bn-item-img">
-                  <img src="./blog-3.jpg" alt="" />
+                  <img src="./1110-tb-curable.svg" alt="" />
                 </div>
               </div>
             </a>
-          <a href="" class="infographic-item-link bn-item-1x2" style="opacity: 1">
-            <div class="bn-item-inner">
-              <div class="bn-item-img">
-                <img src="./category-item-3.webp" alt="" />
-              </div>
-            </div>
-          </a>
-          <a href="" class="infographic-item-link bn-item-1x2" style="opacity: 1">
+
+            <a href="" class="bn-item">
               <div class="bn-item-inner">
                 <div class="bn-item-img">
-                  <img src="./category-item-4.webp" alt="" />
+                  <img src="./1218-easier-to-repair.svg" alt="" />
                 </div>
               </div>
             </a>
-      </section>
+
+            <a href="" class="bn-item">
+              <div class="bn-item-inner">
+                <div class="bn-item-img">
+                  <img src="./blog-1.webp" alt="" />
+                </div>
+              </div>
+            </a>
+
+            <a href="" class="bn-item bn-item-1x2">
+              <div class="bn-item-inner">
+                <div class="bn-item-img">
+                  <img src="./200-H1N1-response.svg" alt="" />
+                </div>
+              </div>
+            </a>
+
+            <a href="" class="bn-item">
+              <div class="bn-item-inner">
+                <div class="bn-item-img">
+                  <img src="./blog-1.webp" alt="" />
+                </div>
+              </div>
+            </a>
+            <a href="" class="bn-item bn-item-2x1">
+              <div class="bn-item-inner">
+                <div
+                  class="bn-item-img"
+                  style="
+                    background-image: radial-gradient(
+                      #004e92 0%,
+                      #004889 16%,
+                      #003670 43%,
+                      #001a48 77%,
+                      #000428 100%
+                    );
+                  "
+                >
+                  <img src="./387-banned-puppy-sales.svg" alt="" />
+                </div>
+              </div>
+            </a>
+            <a href="" class="bn-item bn-item-1x1">
+              <div class="bn-item-inner">
+                <div
+                  class="bn-item-img"
+                  style="
+                    background-image: radial-gradient(
+                      #8f94fb 0%,
+                      #868bf4 23%,
+                      #6d73e0 62%,
+                      #4e54c8 100%
+                    );
+                  "
+                >
+                  <img src="./1164-glyphosate-alternative.svg" alt="" />
+                </div>
+              </div>
+            </a>
+            <a href="" class="bn-item">
+              <div class="bn-item-inner">
+                <div class="bn-item-img">
+                  <img src="./1076-scotland-wind-energy.svg" alt="" />
+                </div>
+              </div>
+            </a>
+            <a href="" class="bn-item bn-item-1x2">
+              <div class="bn-item-inner">
+                <div
+                  class="bn-item-img"
+                  style="
+                    background-image: linear-gradient(
+                      130deg,
+                      #004166 0%,
+                      #00253e 44%,
+                      #001325 79%,
+                      #000d1c 100%
+                    );
+                  "
+                >
+                  <img src="./1288-animal-welfare-laws.svg" alt="" />
+                </div>
+              </div>
+            </a>
+            <a href="" class="bn-item">
+              <div class="bn-item-inner">
+                <div class="bn-item-img">
+                  <img src="./1076-scotland-wind-energy.svg" alt="" />
+                </div>
+              </div>
+            </a>
+            <a href="" class="bn-item bn-item-1x1">
+              <div class="bn-item-inner">
+                <div class="bn-item-img">
+                  <img src="./1110-tb-curable.svg" alt="" />
+                </div>
+              </div>
+            </a>
+            <a href="" class="bn-item bn-item-1x2">
+              <div class="bn-item-inner">
+                <div class="bn-item-img">
+                  <img src="./1382-disease-eradication.svg" alt="" />
+                </div>
+              </div>
+            </a>
+            <a href="" class="bn-item bn-item-2x1">
+              <div class="bn-item-inner">
+                <div class="bn-item-img">
+                  <img src="./1381-usa-wind-power.svg" alt="" />
+                </div>
+              </div>
+            </a>
+          </div>
+        </div>
+      </main>
     </div>
+
+    <script>
+     
+    </script>
   </body>
 </html>
