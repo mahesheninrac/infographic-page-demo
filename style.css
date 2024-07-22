@@ -8,9 +8,6 @@ html {
     box-sizing: border-box
 }
 
-body,input,textarea {
-    font-family: Helvetica Neue,Helvetica,Arial,sans-serif
-}
 
 *,:after,:before {
     -webkit-font-smoothing: antialiased;
